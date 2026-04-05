@@ -61,17 +61,34 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         trajectory2.append(target_positions[1])
         signals1.append(control_signals[0])
         signals2.append(control_signals[1])
-        x = np.linspace(0, 10, 500)
+        x = np.linspace(0, 500, 500)
 
         # CHANGE TO True TO TRIGGER LOGGING
         if ((True) and (len(trajectory1) == 500)):
+            plt.figure(figsize=(14, 8))
             plt.plot(x, trajectory1, label="traj1")
             plt.plot(x, trajectory2, label="traj2")
             plt.plot(x, signals1, label="u1")
             plt.plot(x, signals2, label="u2")
             plt.legend()
-            plt.title("Signals and trajectories until over 1000 timesteps")
+            plt.xlabel("timesteps")
+            plt.title("Signals and trajectories until over 500 timesteps - Original position")
+            plt.savefig("posPIDpics/og_pos_fullView.png")
             plt.show()
+
+            plt.figure(figsize=(14, 8))
+            plt.xlim(150, 375)    
+            plt.ylim(-40, 40)
+            plt.plot(x, trajectory1, label="traj1")
+            plt.plot(x, trajectory2, label="traj2")
+            plt.plot(x, signals1, label="u1")
+            plt.plot(x, signals2, label="u2")
+            plt.legend()    
+            plt.xlabel("timesteps")
+            plt.title("Signals and trajectories until over 500 timesteps - Original position Zoomed")
+            plt.savefig("posPIDpics/og_pos_zoomView.png")
+            plt.show()
+            
 
         # Apply control signals
         data.ctrl[0] = control_signals[0]  # First actuator controls first joint

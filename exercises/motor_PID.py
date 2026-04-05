@@ -67,17 +67,19 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         signals2.append(control_signals[1])
         real_traj1.append(current_positions[0]) #new
         real_traj2.append(current_positions[1]) #new
-        x = np.linspace(0, 800, 800)
+        x = np.linspace(0, 500, 500)
 
         # CHANGE TO True TO TRIGGER LOGGING
-        if ((True) and (len(trajectory1) == 800)):
+        if ((True) and (len(trajectory1) == 500)):
+            plt.figure(figsize=(14, 8))
             plt.plot(x, trajectory1, label="des_1")
             plt.plot(x, trajectory2, label="des_2")
             plt.plot(x, real_traj1, label="real_1")
             plt.plot(x, real_traj2, label="real_2")
             plt.legend()
-            plt.xlabel("milliseconds")
-            plt.title("trajectories until 800 timesteps")
+            plt.xlabel("timesteps")
+            plt.title("real vs desired trajectories until 500 timesteps - motor")
+            plt.savefig("motorPIDpics/newMotor.png")
             plt.show()
 
         # Apply control signals
@@ -89,3 +91,4 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         
         # Update viewer
         viewer.sync()
+        time.sleep(dt)
