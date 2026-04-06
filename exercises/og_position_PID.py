@@ -73,6 +73,29 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
             plt.legend()
             plt.xlabel("timesteps")
             plt.title("Signals and trajectories until over 500 timesteps - Original position")
+            # plt.savefig("posPIDpics/og_pos_fullView.png")
+            plt.show()
+
+            #Create figure and the first (left) axis
+            fig, ax1 = plt.subplots(figsize=(14, 8))
+            ax1.tick_params(axis='both', labelsize=16)
+            #Plot trajectories on the left axis
+            line1 = ax1.plot(x, trajectory1, label="traj1")
+            line2 = ax1.plot(x, trajectory2, label="traj2")
+            ax1.set_xlabel("Timesteps", fontsize=22)
+            ax1.set_ylabel("Target Trajectory Position [rad]", fontsize=22) # Left label
+            # Create the second (right) axis
+            ax2 = ax1.twinx()
+            ax2.tick_params(axis='both', labelsize=16)
+            # Plot signals on the right axis
+            line3 = ax2.plot(x, signals1, label="u1", color="red")
+            line4 = ax2.plot(x, signals2, label="u2", color="green")
+            ax2.set_ylabel("Control Signal", fontsize=22) # Right label
+            # 5. Combined Legend
+            lines = line1 + line2 + line3 + line4
+            labels = [l.get_label() for l in lines]
+            ax1.legend(lines, labels, loc='best', fontsize=14)
+            plt.title("Signals and Trajectories - Original Position", fontsize=24)
             plt.savefig("posPIDpics/og_pos_fullView.png")
             plt.show()
 
@@ -86,7 +109,7 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
             plt.legend()    
             plt.xlabel("timesteps")
             plt.title("Signals and trajectories until over 500 timesteps - Original position Zoomed")
-            plt.savefig("posPIDpics/og_pos_zoomView.png")
+            # plt.savefig("posPIDpics/og_pos_zoomView.png")
             plt.show()
             
 

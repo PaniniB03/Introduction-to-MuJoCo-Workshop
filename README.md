@@ -32,7 +32,7 @@ Running:
     - The new scripts uses arrays to specify different gains for each joint. These are also further tuned. 
 - Logging
     - Original script tracks: target joint trajectories + control signals
-    - New script tracks: target joint trajectories + actual joint positions
+    - New script tracks: target joint trajectories + actual joint positions. This allows for easier comparison/error tracking.
 
 
 
@@ -60,36 +60,23 @@ V2 (PIDforBoth_and_sinforJ2.png)
 
 
 
+<br>  <br />
+Click images to open file.
 
-
-
-
-<table style="width:100%">
-  <tr>
-    <td align="center">
-      <a href="exercises/posPIDpics/og_pos_fullView.png">
-        <img src="exercises/posPIDpics/og_pos_fullView.png" width="150%" title="Click to enlarge">
-      </a>
-      <br>
-      <sup>Original Positional PID Control (Full View)</sup>
-    </td>
-    <td align="center">
-      <a href="exercises/posPIDpics/og_pos_zoomView.png">
-        <img src="exercises/posPIDpics/og_pos_zoomView.png" width="150%" title="Click to enlarge">
-      </a>
-      <br>
-      <sup>Original Positional PID Control (Zoomed)</sup>
-    </td>
-  </tr>
-</table>
-
+<div align="center">
+  <a href="exercises/posPIDpics/og_pos_fullView.png">
+    <img src="exercises/posPIDpics/og_pos_fullView.png" width="500" title="Click to enlarge">
+  </a>
+  <br>
+  <sup>Original Positional PID Control</sup>
+</div>
 
 <div align="center">
   <a href="exercises/posPIDpics/PIDforbothJ.png">
     <img src="exercises/posPIDpics/PIDforbothJ.png" width="500" title="Click to enlarge">
   </a>
   <br>
-  <sup>V1 PID Position (Click image to open file)</sup>
+  <sup>V1 PID Position</sup>
 </div>
 
 <div align="center">
@@ -97,7 +84,7 @@ V2 (PIDforBoth_and_sinforJ2.png)
     <img src="exercises/posPIDpics/PIDforBoth_and_sinforJ2.png" width="500" title="Click to enlarge">
   </a>
   <br>
-  <sup>V2 PID Position (Click image to open file)</sup>
+  <sup>V2 PID Position</sup>
 </div>
 
 
@@ -118,26 +105,17 @@ V2 (PIDforBoth_and_sinforJ2.png)
 `position_PID.py`
 - specific PID gains for each, tuned
 
+<br>  <br />
+Click images to open file.
 
 
-<table style="width:100%">
-  <tr>
-    <td align="center">
-      <a href="exercises/motorPIDpics/og_motor_fullView.png">
-        <img src="exercises/motorPIDpics/og_motor_fullView.png" width="150%" title="Click to enlarge">
-      </a>
-      <br>
-      <sup>Original Motor PID Control (Full View)</sup>
-    </td>
-    <td align="center">
-      <a href="exercises/motorPIDpics/og_motor_zoomView.png">
-        <img src="exercises/motorPIDpics/og_motor_zoomView.png" width="150%" title="Click to enlarge">
-      </a>
-      <br>
-      <sup>Original Motor PID Control (Zoomed)</sup>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <a href="exercises/motorPIDpics/og_motor_fullView.png">
+    <img src="exercises/motorPIDpics/og_motor_fullView.png" width="500" title="Click to enlarge">
+  </a>
+  <br>
+  <sup>Original Motor PID Control</sup>
+</div>
 
 
 <div align="center">
@@ -145,5 +123,5 @@ V2 (PIDforBoth_and_sinforJ2.png)
     <img src="exercises/motorPIDpics/newMotor.png" width="500" title="Click to enlarge">
   </a>
   <br>
-  <sup>New PID Motor (Click image to open file)</sup>
+  <sup>New PID Motor</sup>
 </div>

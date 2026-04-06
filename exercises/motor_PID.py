@@ -72,13 +72,15 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         # CHANGE TO True TO TRIGGER LOGGING
         if ((True) and (len(trajectory1) == 500)):
             plt.figure(figsize=(14, 8))
+            plt.tick_params(axis='both', labelsize=16)
             plt.plot(x, trajectory1, label="des_1")
             plt.plot(x, trajectory2, label="des_2")
             plt.plot(x, real_traj1, label="real_1")
             plt.plot(x, real_traj2, label="real_2")
-            plt.legend()
-            plt.xlabel("timesteps")
-            plt.title("real vs desired trajectories until 500 timesteps - motor")
+            plt.legend(fontsize=14)
+            plt.xlabel("Timesteps" ,fontsize=22)
+            plt.ylabel("Position [rad]", fontsize=22)
+            plt.title("Real vs Desired Trajectories - New Motor", fontsize=24)
             plt.savefig("motorPIDpics/newMotor.png")
             plt.show()
 
